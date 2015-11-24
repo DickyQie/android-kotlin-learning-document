@@ -45,7 +45,7 @@ val dailyForecast = select(DayForecastTable.NAME)
 
 你可以选择你喜欢的一种方式。`select`函数是很简单的，它仅仅是需要一个被查询表的名字。`parse`函数的时候会有一些魔法在里面。在这个例子中我们假设请求结果是一个list，使用了`parseList`函数。它使用了`RowParser`或`RapRowParser`函数去把cursor转换成一个对象的集合。这两个不同之处就是`RowParser`是依赖列的顺序的，而`MapRowParser`是从map中拿到作为column的key名的。
 
-在它们之间有两个重载的冲突，所以我们不能直接使用简化的方式准确地创建需要的对象。但是没有什么是不能通过扩展函数来解决的。我创建了一个接收一个lambda函数返回一个`MapRowParser`的函数。解析起会调用这个lambda来创建这个对象：
+在它们之间有两个重载的冲突，所以我们不能直接使用简化的方式准确地创建需要的对象。但是没有什么是不能通过扩展函数来解决的。我创建了一个接收一个lambda函数返回一个`MapRowParser`的函数。解析器会调用这个lambda来创建这个对象：
 
 ```kotlin
 fun <T : Any> SelectQueryBuilder.parseList(
