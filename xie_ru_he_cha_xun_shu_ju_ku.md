@@ -10,7 +10,7 @@ class ForecastDb(
 }
 ```
 
-所有的函数使用前面章节讲到过的`use()`函数。lambda返回的值也会被用于这个函数的返回值。所以让我们定义一个使用`zip code`和`date`来查询一个`forecast`的函数：
+所有的函数使用前面章节讲到过的`use()`函数。lambda返回的值也会被作为这个函数的返回值。所以让我们定义一个使用`zip code`和`date`来查询一个`forecast`的函数：
 
 ```kotlin
 fun requestForecastByZipCode(zipCode: Long, date: Long) = forecastDbHelper.use {
