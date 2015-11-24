@@ -34,7 +34,7 @@ assertEquals(
 
 #### zip
 
-返回一个`pair`组成List，每个`pair`由两个集合中相同index的元素组成。这个返回的List的大小由最小的那个集合决定。
+返回由`pair`组成的List，每个`pair`由两个集合中相同index的元素组成。这个返回的List的大小由最小的那个集合决定。
 
 ```kotin
 assertEquals(
