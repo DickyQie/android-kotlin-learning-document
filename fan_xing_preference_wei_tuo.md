@@ -1,6 +1,6 @@
-# 范型preference委托
+# 泛型preference委托
 
-现在我们已经时范型专家了，为什么不扩展`LongPreference`为支持所有`Shared Preferences`支持的类型呢？我们来创建一个`Preference`委托：
+现在我们已经时泛型专家了，为什么不扩展`LongPreference`为支持所有`Shared Preferences`支持的类型呢？我们来创建一个`Preference`委托：
 
 ```kotlin
 class Preference<T>(val context: Context, val name: String, val default: T)
@@ -21,7 +21,7 @@ class Preference<T>(val context: Context, val name: String, val default: T)
 }
 ```
 
-这个preference与我们之前使用的非常相似。我们仅仅替换了`Long`为范型类型`T`，然后调用了两个函数来做具体重要的工作。这些函数非常简单，尽管有些重复。它们会检查类型然后使用指定的方式来操作。比如，`findPrefernce`函数如下：
+这个preference与我们之前使用的非常相似。我们仅仅替换了`Long`为泛型类型`T`，然后调用了两个函数来做具体重要的工作。这些函数非常简单，尽管有些重复。它们会检查类型然后使用指定的方式来操作。比如，`findPrefernce`函数如下：
 
 ```kotlin
 private fun <T> findPreference(name: String, default: T): T = with(prefs) {
@@ -65,4 +65,4 @@ object DelegatesExt {
 }
 ```
 
-这章之后，用户可以访问设置界面并修改`zip code`。然后当我们返回主界面，forecast会自动重新刷新并显示新的信息。查看代码库中其余细微的调整。
+这章之后，用户可以访问设置界面并修改`zip code`。然后当我们返回主界面，forecast会自动重新刷新并显示新的信息。查看代码库中其余xi wei
