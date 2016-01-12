@@ -1,6 +1,6 @@
 # 变体
 
-这是真的是最难理解的部分之一。在Java中，当我们使用范型的时候会出现问题。逻辑告诉我们`List<String>`应该可以转型为`List<Object>`，因为它有更弱的限制。但是我们来看下这个例子：
+这是真的是最难理解的部分之一。在Java中，当我们使用泛型的时候会出现问题。逻辑告诉我们`List<String>`应该可以转型为`List<Object>`，因为它有更弱的限制。但是我们来看下这个例子：
 
 ```kotlin
 List<String> strList = new ArrayList<>();
@@ -30,7 +30,7 @@ interface Collection<E> ... {
 
 否则，没有通配符，我们不会允许在这个方法中使用`String` List。相反地，当然会失败。我们不能使用`addAll()`来增加一个`Objects` List到`Strings` List中。因为我们只是用那个方法从`collection`中获取元素，这是一个完美的协变（`covariance`）的例子。
 
-另一方面，我们可以在对立面上发现逆变（`contravariance`）。按照集合的例子，如果我们想把传过来的参数增加到集合中去，我们可以增加更加限制的类型到范型集合中。比如，我们可以增加`Strings`到`Object`List：
+另一方面，我们可以在对立面上发现逆变（`contravariance`）。按照集合的例子，如果我们想把传过来的参数增加到集合中去，我们可以增加更加限制的类型到泛型集合中。比如，我们可以增加`Strings`到`Object`List：
 
 ```java
 void copyStrings(Collection<? super String> to, Collection<String> from) {
@@ -40,7 +40,7 @@ void copyStrings(Collection<? super String> to, Collection<String> from) {
 
 增加`Strings`到另一个集合中唯一的限制就是那个集合接收`Strings`或者父类。
 
-但是通配符都有它的限制。通配符定义了使用场景变体（`use-site variance`），这意味着当我们使用它的时候需要声明它。这表示每次我们声明一个范型变量时都会增加模版代码。
+但是通配符都有它的限制。通配符定义了使用场景变体（`use-site variance`），这意味着当我们使用它的时候需要声明它。这表示每次我们声明一个泛型变量时都会增加模版代码。
 
 让我们看一个例子。使用我们之前相似的类：
 
