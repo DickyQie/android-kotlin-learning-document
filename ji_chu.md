@@ -1,6 +1,6 @@
 # 基础
 
-举个例子，我们可以创建一个指定范型类型的类：
+举个例子，我们可以创建一个指定泛型类：
 
 ```kotlin
 class TypedClass<T>(parameter: T) {
@@ -43,7 +43,7 @@ class TypedClass<T : Context>(parameter: T) {
 
 现在所有继承`Context`的类都可以在我们这个类中使用。其它的类型是不被允许的。
 
-当然，可以使用函数中。我们可以相当简单地构建范型函数：
+当然，可以使用函数中。我们可以相当简单地构建泛型函数：
 
 ```kotlin
 fun <T> typedFunction(item: T): List<T> {
