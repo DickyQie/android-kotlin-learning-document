@@ -97,7 +97,7 @@
    * [接口](jie_kou.md)
    * [委托](wei_tuo.md)
    * [在我们的App中实现一个例子](zai_wo_men_de_app_zhong_shi_xian_yi_ge_li_zi.md)
-* [范型](fan_xing.md)
+* [泛型](fan_xing.md)
    * [基础](ji_chu.md)
    * [变体](bian_ti.md)
    * [范型例子](fan_xing_li_zi.md)
