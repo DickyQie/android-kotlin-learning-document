@@ -59,7 +59,7 @@ public class Artist {
 使用Kotlin，我们只需要通过数据类：
 ```kotlin
 data class Artist(
-    2 var id: Long,
+    var id: Long,
     var name: String,
     var url: String,
     var mbid: String)
