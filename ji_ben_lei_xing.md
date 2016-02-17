@@ -36,7 +36,7 @@ val bitwiseAnd = FLAG1 and FLAG2
 
 ```kotlin
 val i = 12 // An Int
-val iHex = 0x0f // 一个二进制的Int类型
+val iHex = 0x0f // 一个十六进制的Int类型
 val l = 3L // A Long
 val d = 3.5 // A Double
 val f = 3.5F // A Float
