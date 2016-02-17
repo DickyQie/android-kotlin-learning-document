@@ -5,14 +5,14 @@
 - 数字类型中不会自动转型。举个例子，你不能给`Double`变量分配一个`Int`。必须要做一个明确的类型转换，可以使用众多的函数之一：
 
 ```kotlin
-vali:Int=7
+val i:Int=7
 val d: Double = i.toDouble()
 ```
 
 - 字符（Char）不能直接作为一个数字来处理。在需要时我们需要把他们转换为一个数字：
 
 ```kotlin
-valc:Char='c'
+val c:Char='c'
 val i: Int = c.toInt()
 ```
 
@@ -35,7 +35,7 @@ val bitwiseAnd = FLAG1 and FLAG2
 - 字面上可以写明具体的类型。这个不是必须的，但是一个通用的Kotlin实践时省略变量的类型（我们马上就能看到），所以我们可以让编译器自己去推断出具体的类型。
 
 ```kotlin
-vali = 12 // An Int
+val i = 12 // An Int
 val iHex = 0x0f // 一个二进制的Int类型
 val l = 3L // A Long
 val d = 3.5 // A Double
@@ -46,7 +46,7 @@ val f = 3.5F // A Float
 
 ```kotlin
 val s = "Example"
-valc = s[2] // 这是一个字符'a'
+val c = s[2] // 这是一个字符'a'
 // 迭代String
 val s = "Example"
 for(c in s){
