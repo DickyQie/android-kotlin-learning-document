@@ -59,7 +59,7 @@ toast(message = "Hello", length = Toast.LENGTH_SHORT)
 ```
 
 >小提示：String模版
->> 你可以在String中直接使用模版表达式。它可以帮助你很简单地在固定值和变量的基础上编写复杂的String。在上面的例子中，我使用了"[$className] $message"。
+>> 你可以在String中直接使用模版表达式。它可以帮助你很简单地在静态值和变量的基础上编写复杂的String。在上面的例子中，我使用了"[$className] $message"。
 
 >> 如你所见，任何时候你使用一个`$`符号就可以插入一个表达式。如果这个表达式有一点复杂，你就需要使用一对大括号括起来："Your name is ${user.name}"。
 
