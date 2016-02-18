@@ -5,13 +5,13 @@ Kotlin插件包括一个让我们配置Gradle的工具。但是我还是倾向�
 首先，你需要如下修改父`build.gradle`：
 ```groovy
 buildscript {
-    ext.support_version = '23.0.1'
-    ext.kotlin_version = '0.13.1514'
-    ext.anko_version = '0.7'
+    ext.support_version = '23.1.1'
+    ext.kotlin_version = '1.0.0'
+    ext.anko_version = '0.8.2'
     repositories {
         jcenter()
         dependencies {
-            classpath 'com.android.tools.build:gradle:1.2.3'
+            classpath 'com.android.tools.build:gradle:1.5.0'
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         }
     }
@@ -22,14 +22,15 @@ allprojects {
     }
 }
 ```
-正如你看到的，我们创建了一个变量来存储当前的Kotlin版本。你读到这里的时候去检测一下最新版本，因为可能会有更新的版本已经发布了。我们需要在几个不同的地方用到那个版本号，比如你需要加上新的Kotlin插件的`dependency`。你会在你指定的那些模块中的`build.gradle`中再次需要到它。
+正如你看到的，我们创建了一个变量来存储当前的Kotlin版本。你读到这里的时候去检测一下最新版本，因为可能会有更新的版本已经发布了。我们需要在几个不同的地方用到那个版本号，比如你需要加上新的Kotlin插件的`dependency`。你会在你指定的那些模块中的`build.gradle`中再次需要到Kotlin标准库。
 
 我们对于`support library`也是如此，`Anko`库也是同样的做法。用这个方式可以更方便地在一个地方修改所有的版本号。并且使用相同的版本号，更新的时候也不需要每个地方都修改。
 
-我们会增加`Kotlin`库，`Anko`库和`Kotlin Android Extensions plugin`到dependencies。
+我们会增加`Kotlin`标准库，`Anko`库，以及`Kotlin`和`Kotlin Android Extensions plugin`插件到dependencies。
 ```groovy
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android {
     ...
 }
@@ -37,8 +38,7 @@ android {
 dependencies {
     compile "com.android.support:appcompat-v7:$support_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.jetbrains.anko:anko-sdk15:$anko_version"
-    compile "org.jetbrains.anko:anko-support-v4:$anko_version"
+    compile "org.jetbrains.anko:anko-common:$anko_version"
 }
 
 buildscript {
@@ -49,6 +49,5 @@ jcenter() }
     } 
 }
 ```
-Anko库需要几个依赖。第一个是指所支持的最小的SDK。不能比你在`build.gradle`中定义的最小SDK更高，这点很重要。第二增加了额外的`support-v4`库的功能，这是导入`appcompat-v7`库时隐含增加的。
-
+Anko是一个用来简化一些Android任务的很强大的Kotlin库。我们之后将会学习部分anko，但是现在来说仅仅增加`anko-common`就足够了。这个库被分割成了一系列小的部分以至于我们不会把没用到的部分加进来。
 
