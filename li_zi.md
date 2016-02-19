@@ -20,7 +20,7 @@ data class ForecastList(val city: String, val country: String,
 它会使我们的`onBindViewHolder`更简单一点：
 
 ```kotlin
-override fun onBindViewHolder(holder: ForecastListAdapter.ViewHolder,
+override fun onBindViewHolder(holder: ViewHolder,
         position: Int) {
 	with(weekForecast[position]) {
 	    holder.textView.text = "$date - $description - $high/$low"
