@@ -1,6 +1,6 @@
 # 构建domain层
 
-我们现在创建一个新的包作为`domain`层。这一层中会有一系列的`Commands`的实现来为app执行任务。
+我们现在创建一个新的包作为`domain`层。这一层中会包含一些`Commands`的实现来为app执行任务。
 
 首先，必须要定义一个`Command`：
 
@@ -26,11 +26,11 @@ data class Forecast(val date: String, val description: String, val high: Int,
 
 当更多的功能被增加，这些类可能会需要在以后被审查。但是现在这些类对我们来说已经足够了。
 
-这些类需要从数据中映射到我们的domain类，所以我接下来需要创建一个`DataMapper`：
+这些类必须从数据映射到我们的domain类，所以我接下来需要创建一个`DataMapper`：
 
 ```kotlin
 public class ForecastDataMapper {
-    public fun convertFromDataModel(forecast: ForecastResult): ForecastList {
+    fun convertFromDataModel(forecast: ForecastResult): ForecastList {
         return ForecastList(forecast.city.name, forecast.city.country,
                 convertForecastListToDomain(forecast.list))
     private fun convertForecastListToDomain(list: List<Forecast>):
@@ -66,7 +66,7 @@ return list.map { convertForecastItemToDomain(it) }
 现在，编写命令前的准备就绪：
 
 ```kotlin
-public class RequestForecastCommand(val zipCode: String) :
+class RequestForecastCommand(val zipCode: String) :
 				Command<ForecastList> {
 	override fun execute(): ForecastList {
 	    val forecastRequest = ForecastRequest(zipCode)
