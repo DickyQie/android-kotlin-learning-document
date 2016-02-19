@@ -45,14 +45,16 @@ __等于操作符__
 
 | 操作符 | 函数|
 |----|
-| a == b | a?.equals(b) ?: b.identityEquals(null) |
-| a != b | !(a?.equals(b) ?: b.identityEquals(null)) |
+| a == b | a?.equals(b) ?: b === null |
+| a != b | !(a?.equals(b) ?: b === null) |
 
 相等操作符有一点不同，为了达到正确合适的相等检查做了更复杂的转换，因为要得到一个确切的函数结构比较，不仅仅是指定的名称。方法必须要如下准确地被实现：
 
 ```kotlin
-fun equals(other: Any?): Boolean
+operator fun equals(other: Any?): Boolean
 ```
+操作符`===`和`!==`用来做身份检查（它们分别是Java中的`==`和`!=`），并且它们不能被重载。
+
 <br/>
 __函数调用__
 
