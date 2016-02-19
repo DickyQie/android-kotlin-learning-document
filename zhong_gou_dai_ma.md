@@ -1,8 +1,6 @@
 # 润色我们的代码
 
-如果你再去看看我们之前的代码，你会发现我们使用了很多没有必要的`public`修饰符，因为它是默认的修饰符，所以我们不需要去指定它。我们再这次重构中要去优化它：
-
-我们在修改的时候会有很多细节。比如，在`RequestForecastCommand`中，我们在构造函数中我们创建的属性`zipCode`可以定义为`private `：
+我们已经准备好使用`public`来进行重构了，但是我们还有很多其它细节需要修改。比如，在`RequestForecastCommand`中，我们在构造函数中我们创建的属性`zipCode`可以定义为`private`：
 
 ```kotlin
 class RequestForecastCommand(private val zipCode: String)
