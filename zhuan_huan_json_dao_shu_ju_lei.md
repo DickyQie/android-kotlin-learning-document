@@ -21,7 +21,12 @@ data class Weather(val id: Long, val main: String, val description: String,
 
 当我们使用Gson来解析json到我们的类中，这些属性的名字必须要与json中的名字一样，或者可以指定一个`serialised name`（序列化名称）。一个好的实践是，大部分的软件结构中会根据我们app中布局来解耦成不同的模型。所以我喜欢使用声明简化这些类，因为我会在app其它部分使用它之前解析这些类。属性名称与json结果中的名字是完全一样的。
 
-现在，为了返回被解析后的结果，我们的`Request`类需要进行一些修改。它将仍然只接收一个城市的`zipcode`作为参数而不是一个完整的url，因此这样变得更加具有可读性。现在，我会把这个静态的url放在一个`companion object`（伴随对象）中。如果我们之后还创建更多在url后面拼接的请求，也许我们需要之后提取它。I I> ### `Companion objects` I> I> Kotlin允许我们去定义一些行为与静态对象一样的对象。尽管这些对象可以用众所周知的模式来实现，比如容易实现的单例模式。I> I>如果我们需要一个类里面有一些静态的属性、常量或者函数，我们可以使用`companion objecvt`。这个对象被这个类的所有对象所共享，就像Java中的静态属性或者方法。
+现在，为了返回被解析后的结果，我们的`Request`类需要进行一些修改。它将仍然只接收一个城市的`zipcode`作为参数而不是一个完整的url，因此这样变得更加具有可读性。现在，我会把这个静态的url放在一个`companion object`（伴随对象）中。如果我们之后还要对该API增加更多请求，我们需要提取它。
+
+> __Companion objects__
+>> Kotlin允许我们去定义一些行为与静态对象一样的对象。尽管这些对象可以用众所周知的模式来实现，比如容易实现的单例模式。
+
+>> 我们需要一个类里面有一些静态的属性、常量或者函数，我们可以使用`companion objecvt`。这个对象被这个类的所有对象所共享，就像Java中的静态属性或者方法。
 
 以下是最后的代码：
 
@@ -34,7 +39,7 @@ public class ForecastRequest(val zipCode: String) {
         private val COMPLETE_URL = "$URL&APPID=$APP_ID&q="
 	}
 	
-    public fun execute(): ForecastResult {
+    fun execute(): ForecastResult {
         val forecastJsonStr = URL(COMPLETE_URL + zipCode).readText()
         return Gson().fromJson(forecastJsonStr, ForecastResult::class.java)
 	}
