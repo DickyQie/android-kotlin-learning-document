@@ -59,8 +59,4 @@ view.setOnClickListener() { toast("Click") }
 view.setOnClickListener { toast("Click") }
 ```
 
-比原始的Java代码简短了5倍多，并且更加容易理解它所做的事情。非常让人影响深刻。Anko给我们提供了简单（基于名字上的）的版本，正如我之前展示给你看的那样它是由扩展函数来实现的：
-
-```kotlin
-view.onClick { toast("Click") }
-```
+比原始的Java代码简短了5倍多，并且更加容易理解它所做的事情。非常让人影响深刻。
