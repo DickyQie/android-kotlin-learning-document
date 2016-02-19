@@ -42,6 +42,7 @@
    * [转换json到数据类](zhuan_huan_json_dao_shu_ju_lei.md)
    * [构建domain层](gou_jiandomain_ceng.md)
    * [在UI中绘制数据](zaiui_zhong_hui_zhi_shu_ju.md)
+* 解析数据
 * [操作符重载](cao_zuo_fu_zhong_zai.md)
    * [操作符表](cao_zuo_fu_biao.md)
    * [例子](li_zi.md)
@@ -51,7 +52,6 @@
    * [简化setOnClickListener()](jian_hua_setonclicklistener.md)
    * [ForecastListAdapter的click listener](forecastlistadapterde_click_listener.md)
    * [扩展语言](kuo_zhan_yu_yan.md)
-* 解析数据
 * [可见性修饰符](ke_jian_xing_xiu_shi_fu.md)
    * [修饰符](xiu_shi_fu.md)
    * [构造器](gou_zao_qi.md)
