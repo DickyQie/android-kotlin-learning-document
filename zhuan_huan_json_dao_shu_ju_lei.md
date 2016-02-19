@@ -50,5 +50,5 @@ public class ForecastRequest(val zipCode: String) {
 记得在`build.gradle`中增加你需要的Gson依赖：
 
 ```groovy
-compile "com.google.code.gson:gson:<version>"
+compile "com.google.code.gson:gson:2.4"
 ```
