@@ -113,28 +113,28 @@ itemClick(forecast)
 ```kotlin
 class ViewHolder(view: View, val itemClick: OnItemClickListener) :
 				RecyclerView.ViewHolder(view) {
-private val iconView: ImageView
-private val dateView: TextView
-private val descriptionView: TextView
-private val maxTemperatureView: TextView
-private val minTemperatureView: TextView
+    private val iconView: ImageView
+    private val dateView: TextView
+    private val descriptionView: TextView
+    private val maxTemperatureView: TextView
+    private val minTemperatureView: TextView
 
-init {
-	iconView = view.find(R.id.icon)
-	dateView = view.find(R.id.date)
-	descriptionView = view.find(R.id.description)
-	maxTemperatureView = view.find(R.id.maxTemperature)
-	minTemperatureView = view.find(R.id.minTemperature)
-}
+    init {
+    	iconView = view.find(R.id.icon)
+    	dateView = view.find(R.id.date)
+    	descriptionView = view.find(R.id.description)
+    	maxTemperatureView = view.find(R.id.maxTemperature)
+    	minTemperatureView = view.find(R.id.minTemperature)
+    }
 
-fun bindForecast(forecast: Forecast) {
-	with(forecast) {
-	    Picasso.with(itemView.ctx).load(iconUrl).into(iconView)
-	    dateView.text = date
-	    descriptionView.text = description
-	    maxTemperatureView.text = "${high.toString()}"
-	    minTemperatureView.text = "${low.toString()}"
-	    itemView.onClick { itemClick(forecast) }
+    fun bindForecast(forecast: Forecast) {
+    	with(forecast) {
+    	    Picasso.with(itemView.ctx).load(iconUrl).into(iconView)
+    	    dateView.text = date
+    	    descriptionView.text = description
+    	    maxTemperatureView.text = "${high.toString()}"
+    	    minTemperatureView.text = "${low.toString()}"
+    	    itemView.setOnClickListener { itemClick(forecast) }
 	    }
     }
 }
@@ -149,8 +149,8 @@ public class ForecastListAdapter(val weekForecast: ForecastList,
         
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             ViewHolder {
-        val view = parent.ctx.layoutInflater.inflate(R.layout.item_forecast,
-            parent, false)
+        val view = LayoutInflater.from(parent.ctx)
+            .inflate(R.layout.item_forecast, parent, false)
         return ViewHolder(view, itemClick)
     }
     
@@ -164,7 +164,7 @@ public class ForecastListAdapter(val weekForecast: ForecastList,
 如果你使用了上面这些代码，`parent.ctx`不会被编译成功。Anko提供了大量的扩展函数来让Android编程更简单。举个例子，activitys、fragments以及其它包含了`ctx`这个属性，通过`ctx`这个属性来返回context，但是在View中缺少这个属性。所以我们要创建一个新的名叫`ViewExtensions.kt`文件来代替`ui.utils`，然后增加这个扩展属性：
 
 ```kotlin
-public val View.ctx: Context
+val View.ctx: Context
     get() = context
 ```
 
