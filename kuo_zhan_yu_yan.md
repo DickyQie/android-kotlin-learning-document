@@ -13,9 +13,9 @@ with(forecast) {
 	Picasso.with(itemView.ctx).load(iconUrl).into(iconView)
 	dateView.text = date
 	descriptionView.text = description
-	maxTemperatureView.text = "${high.toString()}"
-	minTemperatureView.text = "${low.toString()}"
-	itemView.onClick { itemClick(forecast) }
+	maxTemperatureView.text = "$high"
+	minTemperatureView.text = "$low"
+	itemView.setOnClickListener { itemClick(this) }
 }
 ```
 
