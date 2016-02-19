@@ -55,7 +55,7 @@
 * [可见性修饰符](ke_jian_xing_xiu_shi_fu.md)
    * [修饰符](xiu_shi_fu.md)
    * [构造器](gou_zao_qi.md)
-   * [重构代码](zhong_gou_dai_ma.md)
+   * [润色我们的代码](run_se_wo_men_de_dai_ma.md)
 * [Kotlin Android Extensions](kotlin_android_extensions.md)
    * [怎么去使用Kotlin Android Extensions](zen_yaoqu_shi_yong_kotlinandroid_extensions.md)
    * [重构我们的代码](zhong_gou_wo_men_de_dai_ma.md)
