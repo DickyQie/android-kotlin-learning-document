@@ -4,33 +4,18 @@
 
 `RecyclerView`中所使用到的布局现在只需要一个`TextView`，我会手动去创建这个简单的文本列表。增加一个名为`ForecastListAdapter.kt`的Kotlin文件，包括如下代码：
 ```kotlin
-public class ForecastListAdapter(val items: List<String>) :
+class ForecastListAdapter(val items: List<String>) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
         
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ForecastListAdapter.ViewHolder? {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(TextView(parent.context))
         
-    override fun onBindViewHolder(holder: ForecastListAdapter.ViewHolder, position: Int) {
-        holder.textView.text = items.get(position)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.textView.text = items.[position]
     }
     
-    override fun getItemCount(): Int = items.size()
-    
-    class ViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
-}
-
-public class ForecastListAdapter(val items: List<String>) :
-        RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ForecastListAdapter.ViewHolder? {
-        return ViewHolder(TextView(parent.context))
-    }
-
-    override fun onBindViewHolder(holder: ForecastListAdapter.ViewHolder, position: Int) {
-        holder.textView.text = items[position]
-    }
-
     override fun getItemCount(): Int = items.size
-
+    
     class ViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
 }
 ```
