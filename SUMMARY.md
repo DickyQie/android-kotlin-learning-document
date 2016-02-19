@@ -51,6 +51,7 @@
    * [简化setOnClickListener()](jian_hua_setonclicklistener.md)
    * [ForecastListAdapter的click listener](forecastlistadapterde_click_listener.md)
    * [扩展语言](kuo_zhan_yu_yan.md)
+* 解析数据
 * [可见性修饰符](ke_jian_xing_xiu_shi_fu.md)
    * [修饰符](xiu_shi_fu.md)
    * [构造器](gou_zao_qi.md)
@@ -114,5 +115,4 @@
    * [密封（Sealed）类](mi_feng_lei.md)
    * [异常（Exceptions）](yi_chang_ff08_exceptions.md)
 * [结尾](jie_wei.md)
-* 解析数据
 
