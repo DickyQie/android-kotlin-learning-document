@@ -1,6 +1,6 @@
 # 创建一个layout
 
-控制显示天气预报列表的我们使用`RecyclerView`，所以你需要在`build.gradle`中增加一个新的依赖：
+显示天气预报的列表我们使用`RecyclerView`，所以你需要在`build.gradle`中增加一个新的依赖：
 
 ```groovy
 dependencies {
