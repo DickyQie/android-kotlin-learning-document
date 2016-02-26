@@ -9,7 +9,7 @@ class ForecastListAdapter(val items: List<String>) :
         
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(TextView(parent.context))
-        
+    }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = items.[position]
     }
@@ -22,7 +22,7 @@ class ForecastListAdapter(val items: List<String>) :
 
 又是如此，我们可以像访问属性一样访问context和text。你可以保持以往那样操作（使用getters和setters）,但是你会得到一个编译器的警告。如果你还是倾向于Java中的使用方式，这个检查可以被关闭。但是一旦你使用上了这种属性调用的方式你就会爱上它，而且它也节省了额外的字符总量。
 
-回到`MainActivity`，现在简单地创建一系列的String放入List中，然后使用创建分配Adapter实利。
+回到`MainActivity`，现在简单地创建一系列的String放入List中，然后使用创建分配Adapter实例。
 
 ```kotlin
 private val items = listOf(
