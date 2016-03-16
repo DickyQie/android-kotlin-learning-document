@@ -24,7 +24,7 @@ if (forecast != null) dataMapper.convertDayToDomain(forecast) else null
 forecast?.let { dataMapper.convertDayToDomain(it) }
 ```
 
-对亏`?.`操作符，`let`函数只会在`forecast`不是null的时候才会执行。否则它会返回null。也就是我们想达到的效果。
+多亏`?.`操作符，`let`函数只会在`forecast`不是null的时候才会执行。否则它会返回null。也就是我们想达到的效果。
 
 #### with
 
