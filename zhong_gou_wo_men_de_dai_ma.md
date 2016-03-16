@@ -43,7 +43,7 @@ import kotlinx.android.synthetic.item_forecast.view.*
 
 然后现在我们可以在`ViewHolder`中使用包含在`itemView`中的属性。实际上你可以在任何view中使用这些属性，但是很显然如果view不包含要获取的子view就会奔溃。
 
-我们不再需要这么view的属性了，我们现在可以更加直接地去访问：
+现在我们可以直接访问view的属性了：
 
 ```kotlin
 class ViewHolder(view: View, val itemClick: (Forecast) -> Unit) :
