@@ -8,7 +8,7 @@
 
 ```kotlin
 class Delegate<T> : ReadWriteProperty<Any?, T> {
-	fungetValue(thisRef: Any?, property: KProperty<*>): T {
+	fun getValue(thisRef: Any?, property: KProperty<*>): T {
 		return ...
 	}
 	
