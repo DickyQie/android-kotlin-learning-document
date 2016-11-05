@@ -43,7 +43,8 @@ dependencies {
 
 buildscript {
     repositories {
-jcenter() }
+      jcenter() 
+    }
     dependencies {
       classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     } 
