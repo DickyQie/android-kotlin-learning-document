@@ -1,6 +1,6 @@
 # 泛型preference委托
 
-现在我们已经时泛型专家了，为什么不扩展`LongPreference`为支持所有`Shared Preferences`支持的类型呢？我们来创建一个`Preference`委托：
+现在我们已经是泛型专家了，为什么不扩展`LongPreference`为支持所有`Shared Preferences`支持的类型呢？我们来创建一个`Preference`委托：
 
 ```kotlin
 class Preference<T>(val context: Context, val name: String, val default: T)
