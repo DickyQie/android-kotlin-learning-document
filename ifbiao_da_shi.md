@@ -18,7 +18,7 @@ if(x>0){
 val res = if (x != null && x.size() >= days) x else null
 ```
 
-这也说明我也不需要想Java那种有一个三元操作符，因为我们可以使用它来简单实现：
+这也说明我也不需要像Java那种有一个三元操作符，因为我们可以使用它来简单实现：
 
 ```kotlin
 val z = if (condition) x else y
